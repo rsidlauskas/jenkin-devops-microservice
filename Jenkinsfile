@@ -1,6 +1,10 @@
-node {
+pipeline {
+	agent { docker { image 'maven:3.6.3'} }
 	stage('Build') {
-		echo "Build"
+		steps {
+			echo "mvn --version"
+			echo "Build"
+		}
 	}
 	stage('Test') {
 		echo "Test"
